@@ -2,21 +2,13 @@
 
 #TODO -> restructure to create API for other modules/programs
 def main() -> None:
-    
+
     our_matrix: list[list[float]] = get_matrix_from_input()
     print(our_matrix)
     print(our_matrix[0][0])
     print(len(our_matrix[1]))
 
-    print("Pick row to scale")
-    chosen_row: int = int(input())
-    print(f"You will be printing the following row: { our_matrix[chosen_row] }")
-
-    print("Pick a number to scale this row by")
-    scalar: float = float(input())
-
-    print("This is the scaled row V V V")
-    print( get_scaled_row(our_matrix, chosen_row, scalar) )
+    
 
     return
 
@@ -36,10 +28,16 @@ def get_matrix_from_input() -> list[list[float]]:
             
     return entry
 
-#///Row Operations
-#///
+def solve_matrix(matrix: list[list[float]]) -> list[list[float]]:
+
+    row_length: int = len(matrix[0])
+    number_of_rows: int = len(matrix)
+
+    piv
 
 
+
+    return
 
 def swap_rows(
     matrix: list[list[float]], 
@@ -48,7 +46,6 @@ def swap_rows(
 
 
     return
-
 
 
 def scale_row(
@@ -60,8 +57,6 @@ def scale_row(
 
     return
 
-
-
 def combine_rows(
     matrix: list[list[float]], 
     row_1: int, 
@@ -71,8 +66,6 @@ def combine_rows(
 
     
     return
-
-
 
 #TODO -> determine if this is optimal formatting for 80 char margins
 def get_scaled_row(
