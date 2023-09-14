@@ -5,9 +5,8 @@ def main() -> None:
 
     our_matrix: list[list[float]] = get_matrix_from_input()
     print(our_matrix)
-    print(our_matrix[0][0])
-    print(len(our_matrix[1]))
-
+ 
+    solve_matrix(our_matrix)
     
 
     return
@@ -30,20 +29,30 @@ def get_matrix_from_input() -> list[list[float]]:
 
 def solve_matrix(matrix: list[list[float]]) -> list[list[float]]:
 
-    row_length: int = len(matrix[0])
+    row_length: int =     len(matrix[0])
     number_of_rows: int = len(matrix)
 
-    piv
+    pivot_row: int =    0
+    pivot_column: int = 0
 
+    while(true):
+
+        if (matrix[pivot_row][pivot_column] == 0):
+            
+            for x in range(pivot_row, number_of_rows):
+                if matrix[x][pivot_column] != 0:
+                    matrix = swap_rows(matrix, pivot_row, x)
+            continue
+        
 
 
     return
 
 def swap_rows(
     matrix: list[list[float]], 
-    row_number: int,
+    first_row_number: int,
+    second_row_number: int,
 )-> list[list[float]]: 
-
 
     return
 
@@ -54,6 +63,7 @@ def scale_row(
     scalar: float,
 )-> list[list[float]]:
 
+    matrix[row] = [x*scalar for x in matrix[row]]
 
     return
 
@@ -64,7 +74,10 @@ def combine_rows(
     scalar: float,
 )-> list[list[float]]:
 
-    
+    matrix = scale_row(matrix, row_1, scalar)
+ 
+    for x in range()
+
     return
 
 #TODO -> determine if this is optimal formatting for 80 char margins
