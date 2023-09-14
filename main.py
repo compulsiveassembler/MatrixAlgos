@@ -7,7 +7,6 @@ def main() -> None:
     print(our_matrix)
  
     solve_matrix(our_matrix)
-
  
     print(our_matrix)
 
@@ -36,37 +35,6 @@ def solve_matrix(matrix: list[list[float]]) -> list[list[float]]:
 
     pivot_row: int    = 0
     pivot_column: int = 0
-
-    target_row: int   = pivot_row + 1
-
-    while(True):
-
-        print(matrix)
-
-        if (pivot_row == number_of_rows or pivot_column == row_length):
-            break
-
-        if (matrix[pivot_row][pivot_column] == 0):
-            
-            for x in range(pivot_row, number_of_rows):
-                if matrix[x][pivot_column] != 0:
-                    swap_rows(matrix, pivot_row, x)
-            continue
-        else:
-            
-            if (target_row != number_of_rows):
-                scalar: float = (1\
-                                /matrix[pivot_row][pivot_column])\
-                                *-matrix[target_row][pivot_column]
-                print(scalar)
-
-                combine_rows(matrix, pivot_row, target_row, scalar)
-                target_row = target_row + 1
-            else:
-#                pivot_row = pivot_row + 1
-                pivot_column = pivot_column + 1
-                target_row = target_row + 1
-                continue
 
 
 
@@ -111,8 +79,8 @@ def combine_rows(
 
     print(f"scaled row is {scaled_row}")
  
-    for x in range(0, row_length):
-        matrix[row_2][x] = matrix[row_2][x] + scaled_row[x]
+    for column in range(0, row_length):
+        matrix[row_2][column] = matrix[row_2][column] + scaled_row[column]
 
     return
 
